@@ -1,0 +1,37 @@
+<svg class="lds-default" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="75" cy="50" fill="#cdd4d8" r="3" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.917s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.917s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+</circle><circle cx="71.651" cy="62.5" fill="#cdd4d8" r="3" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.833s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.833s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+</circle><circle cx="62.5" cy="71.651" fill="#cdd4d8" r="3" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.75s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.75s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+</circle><circle cx="50" cy="75" fill="#cdd4d8" r="3" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.667s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.667s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+</circle><circle cx="37.5" cy="71.651" fill="#c4d1db" r="3.136" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.583s" stroke="none" fill="#c4d1db" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.583s" stroke="none" fill="#c4d1db" stroke-width="1px"></animate>
+</circle><circle cx="28.349" cy="62.5" fill="#99c0e7" r="3.8" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.5s" stroke="none" fill="#99c0e7" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.5s" stroke="none" fill="#99c0e7" stroke-width="1px"></animate>
+</circle><circle cx="25" cy="50" fill="#6faff4" r="4.464" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.417s" stroke="none" fill="#6faff4" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.417s" stroke="none" fill="#6faff4" stroke-width="1px"></animate>
+</circle><circle cx="28.349" cy="37.5" fill="#55a4fb" r="4.864" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.333s" stroke="none" fill="#55a4fb" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.333s" stroke="none" fill="#55a4fb" stroke-width="1px"></animate>
+</circle><circle cx="37.5" cy="28.349" fill="#80b5ef" r="4.2" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.25s" stroke="none" fill="#80b5ef" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.25s" stroke="none" fill="#80b5ef" stroke-width="1px"></animate>
+</circle><circle cx="50" cy="25" fill="#aac6e2" r="3.536" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.167s" stroke="none" fill="#aac6e2" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.167s" stroke="none" fill="#aac6e2" stroke-width="1px"></animate>
+</circle><circle cx="62.5" cy="28.349" fill="#cdd4d8" r="3" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="-0.083s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="-0.083s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+</circle><circle cx="71.651" cy="37.5" fill="#cdd4d8" r="3" stroke="none" stroke-width="1px">
+  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1s" repeatCount="indefinite" begin="0s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+  <animate attributeName="fill" values="#cdd4d8;#cdd4d8;#4ca1fe;#cdd4d8;#cdd4d8" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1s" begin="0s" stroke="none" fill="#cdd4d8" stroke-width="1px"></animate>
+</circle></svg>

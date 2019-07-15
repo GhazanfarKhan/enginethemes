@@ -1,0 +1,111 @@
+.radio-image {
+  position: relative;
+  width: 100%;
+  li {
+    float: left;
+    padding: 0 12px 12px;
+    width: 25%;
+    &:first-child, &:nth-child(4n+1) {
+      margin-left: -12px;
+      clear: left;
+    }
+    @include breakpoint ($sm) {
+      width: 50%;
+      &:nth-child(4n+1) {
+        margin-left: 0;
+        clear: none;
+      }
+      &:first-child, &:nth-child(2n+1) {
+        margin-left: -12px;
+        clear: left;
+      }
+    }
+  }
+  .rating__label {
+    float: left;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    &:after {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      content: 'check_circle';
+      font-family: 'Material Icons';
+      font-size: 24px;
+      border: 3px solid $white;
+      color: $clr-pri;
+      background: $white;
+      border-radius: 50%;
+      @extend %transitionFast;
+      transform: scale(0);
+      word-wrap: normal;
+      white-space: nowrap;
+    }
+    img {
+      width: 100%;
+      border: 2px solid #e1e1e1;
+      border-radius: 5px;
+      padding: 5px;
+      background: $white;
+      margin: 0 0 8px 0;
+      @extend %transitionFast;
+    }
+    p {
+      font-size: 16px;
+      line-height: 21px;
+      color: $clr-sec;
+      padding: 3px 3px 3px 40px;
+      position: relative;
+      @extend %transitionFast;
+      span {
+        position: absolute;
+        left: 2px;
+        top: 0;
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        background: $white;
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: 600;
+        color: $clr-pri;
+        border: 2px solid #e1e1e1;
+        border-radius: 3px;
+        @extend %transitionFast;
+      }
+    }
+    &:hover,
+    &:active {
+      img {
+        border-color: #c9c9c9;
+      }
+      p {
+        span {
+          border-color: #c9c9c9;
+        }
+      }
+    }
+  }
+  .rating__field {
+    position: absolute;
+    left: -9999px;
+    &:checked {
+      & + label {
+        &:after {
+          transform: scale(1);
+        }
+        img {
+          border-color: $clr-pri;
+        }
+        p {
+          span {
+            background: $clr-pri;
+            color: $white;
+            border-color: $clr-pri;
+          }
+        }
+      }
+    }
+  }
+}

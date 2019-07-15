@@ -1,0 +1,30 @@
+$clr-gray-d: #d5d5d6;
+.progress {
+  width: 100%;
+  margin: 0 auto;
+  display: table;
+  .p_unit {
+    display: table-cell;
+    height: 5px;
+    padding: 0 1px;
+    &:before {
+      display: block;
+      height: 100%;
+      content: '';
+      background: $clr-gray-d;
+      @extend %transitionFast;
+    }
+    &.active {
+      &:before {
+        background: $clr-pri;
+      }
+    }
+  }
+  @include respondTo (100px, 767px) {
+    .p_unit {
+      padding: 0;
+    }
+  }
+}
+
+

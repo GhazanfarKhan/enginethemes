@@ -1,0 +1,24 @@
+body .ui-button {
+  background-color: $clr-pri;
+  border-color: $clr-pri;
+}
+body .ui-button:enabled:hover {
+  background-color: $clr-pri;
+  border-color: $clr-pri;
+}
+body .ui-inputtext:enabled:focus:not(.ui-state-error) {
+  border-color: $clr-pri;
+}
+body .ui-dropdown:not(.ui-state-disabled).ui-state-focus {
+  border-color: $clr-pri;
+}
+body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight, body .ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item-group.ui-state-highlight {
+  background-color: $clr-pri;
+}
+body .ui-datepicker table td > a.ui-state-active, body .ui-datepicker table td > span.ui-state-active {
+  background-color: $clr-pri;
+}
+body .ui-datepicker:not(.ui-state-disabled) .ui-datepicker-header .ui-datepicker-prev:hover,
+body .ui-datepicker:not(.ui-state-disabled) .ui-datepicker-header .ui-datepicker-next:hover {
+  color: $clr-pri;
+}

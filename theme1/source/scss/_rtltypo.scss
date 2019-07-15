@@ -1,0 +1,70 @@
+﻿/* ======================= RTL Typography ======================= */
+[dir="rtl"] {
+  .question__header {
+    width: 100%;
+  }
+
+  .question .question__copy {
+    float: right;
+    padding-right: 0px;
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .survey-legends {
+    float: left;
+    padding-left: 50px;
+    padding-right: 0px;
+    width: 59%;
+  }
+
+  .rating-list li {
+    float: right;
+    width: 7.727272727272727%;
+  }
+
+  .question .question__answer {
+    width: 59%;
+  }
+
+  .survey-legends {
+    .legend {
+      float: right;
+      width: 78%;
+    }
+  }
+
+  .legend .legend__label {
+    font-size: 16px;
+  }
+
+  .btn {
+    line-height: 1;
+  }
+
+  .radio-list input[type="radio"] + label {
+
+    padding-left: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+    line-height: 23px;
+
+  }
+
+  .radio-list input[type="radio"] + label:before, .radio-list input[type="radio"] + label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 19px;
+    height: 19px;
+    text-align: center;
+    color: #000;
+    border-radius: 50%;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+}
+
+/* ======================= RTL Typography ======================= */

@@ -1,0 +1,266 @@
+html[dir='rtl'] {
+  //layout.scss redifines
+
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: right;
+  }
+
+  //footer
+
+  footer {
+    .col-lg-6 {
+      float: right;
+    }
+    ul {
+      text-align: left;
+
+      @include breakpoint ($sm) {
+        text-align: right;
+      }
+
+      li {
+        &:before {
+          margin: 0 5px 0 10px;
+        }
+      }
+    }
+    p {
+      text-align: right;
+    }
+
+  }
+
+  .not-prefered {
+
+    .rating__label {
+      padding: 6px 35px 0 0;
+
+      &:before {
+        left: auto;
+        right: 0;
+      }
+
+    }
+    .rating__field {
+      left: auto;
+      right: -9999px;
+    }
+  }
+
+  .content-rules {
+    .content {
+      text-align: right;
+
+      p {
+        padding-left: 0;
+        padding-right: 25px;
+        .copy__label {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+
+    .top-content {
+      float: right;
+      .top__header {
+        float: right;
+        img {
+          float: right;
+        }
+      }
+    }
+  }
+
+  //questions.scss redifines
+  .question {
+    float: right;
+    .q__answer {
+      padding-left: 0;
+      padding-right: 50px;
+      .col-lg-8, .col-lg-4, .col-md-3 {
+        float: right;
+      }
+    }
+    .q__copy {
+      padding: 5px 55px 0 0;
+      span {
+        font-weight: normal;
+      }
+      .q__label {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+  .legend {
+    &:before {
+      left: auto;
+      right: 50px;
+    }
+  }
+  .text-right {
+    text-align: left;
+  }
+  .text-left {
+    text-align: right;
+  }
+  .add-comment {
+    float: right;
+    .col-lg-8 {
+      float: right;
+    }
+  }
+  .other-field {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+  .field {
+    float: right;
+  }
+  .counter, .character-left {
+    float: right;
+  }
+
+  //buttons.scss redifines
+
+  .icon-comment-o {
+    margin-right: 0 !important;
+    margin-left: 5px !important;
+  }
+  .btn {
+    &.btn--primary {
+      &:after {
+        margin-left: 0;
+        margin-right: 10px;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-transform-origin: center center;
+        -moz-transform-origin: center center;
+        -ms-transform-origin: center center;
+        -o-transform-origin: center center;
+        transform-origin: center center;
+      }
+    }
+  }
+
+  //radioscales.scss redifines
+  .rating-scale {
+    li {
+      float: right;
+      label {
+        border-left: 1px solid #cdced1;
+        border-right: none;
+        &:before {
+          margin-right: 0;
+          margin-left: -10px;
+        }
+      }
+
+      input:checked + label {
+        &:before {
+          margin-right: 0;
+          margin-left: 12px;
+        }
+      }
+
+      &:first-child {
+
+        label {
+          border-right: 1px solid #cdced1;
+          @include border-radius-separate(0, 40px, 40px, 0);
+          @include respondTo($sm) {
+            @include border-radius(40px);
+          }
+        }
+      }
+
+      &:last-child {
+        label {
+          @include border-radius-separate(40px, 0, 0, 40px);
+          @include respondTo($sm) {
+            @include border-radius(40px);
+          }
+        }
+      }
+
+      @include respondTo($sm) {
+
+        label {
+          @include border-radius(40px);
+          border: 1px solid #cdced1;
+        }
+      }
+
+    }
+
+    &.scale--small {
+
+      li {
+        @include respondTo($sm) {
+          float: right;
+          label {
+            border-left: 1px solid #cdced1;
+            border-right: 0;
+          }
+          &:first-child {
+            label {
+              @include respondTo($sm) {
+                @include border-radius-separate(0, 40px, 40px, 0);
+                border-left: 0;
+                border-right: 1px solid #cdced1;
+              }
+            }
+          }
+
+          &:last-child {
+            label {
+              @include respondTo($sm) {
+                @include border-radius-separate(40px, 0, 0, 40px);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.scale--check {
+      li {
+        float: right;
+        label {
+          @include border-radius(40px);
+          border: 1px solid #cdced1;
+        }
+
+      }
+    }
+  }
+  //thankyou.scss redfines
+  .form-extended {
+    float: right;
+
+    .field-container {
+      float: right;
+
+      &.second--child {
+        margin-left: 0;
+        margin-right: 2%;
+        @include respondTo($sm) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  //input.scss redifine
+  .rating-list {
+
+    .rating__field {
+      left: auto;
+      right: -9999px;
+    }
+
+  }
+}

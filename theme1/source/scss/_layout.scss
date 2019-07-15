@@ -1,0 +1,340 @@
+// layout.scss
+// contains layout styles
+
+/* Without it Bootstrap Grid wont work */
+
+*,
+*:before,
+*:after {
+  @include box-sizing;
+  font-feature-settings: 'liga';
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  background: #f4f5f9;
+  color: $black;
+  font-family: 'Source Sans Pro', sans-serif;
+  word-break: break-word;
+}
+
+a {
+  color: $clr-pri;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.container {
+  max-width:920px;
+  margin: 0 auto;
+}
+
+.header {
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+  @include breakpoint ($sm) {
+    padding: 15px;
+  }
+
+  .logo {
+    float: left;
+    margin: 0;
+
+    img{
+      max-height:50px;
+    }
+  }
+
+  .slogan {
+    padding: 7px 0 0;
+    text-align: right;
+    float: right;
+    font-size: 20px;
+    @include breakpoint ($sm) {
+      width: 100%;
+      float: left;
+      text-align: center;
+    }
+  }
+  .select-language {
+    float: right;
+    padding: 0 0 0 15px;
+    @include breakpoint ($sm) {
+      margin-top:5px;
+    }
+  }
+
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #cecfd1, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #cecfd1, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #cecfd1, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #cecfd1, #f0f0f0);
+  margin: 60px 0 40px;
+  float: left;
+  width: 100%;
+
+  @include breakpoint ($md) {
+    margin: 30px 0 20px;
+  }
+}
+
+.banner {
+  float: left;
+  width: 100%;
+  position: relative;
+  border-bottom: 4px solid #d8d8d8;
+  img{
+    float: left;
+    width: 100%;
+  }
+
+}
+
+.main {
+  position: relative;
+
+  padding: 0;
+  box-shadow: 0px 0px 28.35px 6.65px rgba(146, 146, 146, 0.11);
+  float: left;
+  width: 100%;
+
+}
+
+.content {
+  float: left;
+  width: 100%;
+  background: $white;
+  .select-language {
+    padding: 25px 0;
+    background: none;
+    .language__label {
+      display: block;
+      margin: 0 0 10px 0;
+    }
+    .language__select {
+      width: 30%;
+      @include breakpoint ($sm) {
+        width:100%;
+      }
+    }
+  }
+}
+
+.content-header {
+  padding: 30px 30px 10px;
+  @include breakpoint ($sm) {
+    padding: 20px 20px 0;
+  }
+  h2 {
+    font-size: 14px;
+    margin: 0 0 15px 0;
+  }
+  p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 10px 0;
+    color: #4d565f;
+  }
+}
+
+footer {
+  float: left;
+  width: 100%;
+  padding: 30px 0;
+  .btn {
+    float: right;
+    @include respondTo ($sm) {
+      float: none;
+      display: block;
+    }
+
+
+    &:first-child {
+      float: left;
+      @include respondTo ($sm) {
+        float: none;
+      }
+    }
+  }
+  @include breakpoint ($sm) {
+    padding: 20px 20px 5px;
+    text-align: center;
+  }
+
+  .btn {
+    @include breakpoint ($sm) {
+      // padding: 20px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+  }
+}
+
+.textarea {
+  width: 100%;
+  display: block;
+  height: 80px;
+  padding: 15px;
+  resize: none;
+  font-family: inherit;
+  background: #fff;
+  font-size: 14px;
+  box-shadow: 0px 3px 16px 0px rgba(157, 175, 185, 0.25);
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  &:focus,
+  &:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.25);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.25);
+    box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.25);
+  }
+}
+.date-field {
+  position: relative;
+  &:before {
+    content: 'insert_invitation';
+    color: $clr-pri;
+    font-family: "Material Icons";
+    font-size: 22px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  input {
+    width: 100%;
+    display: block;
+    padding: 10px 35px 10px 15px;
+    resize: none;
+    font-family: inherit;
+    background: #fff;
+    font-size: 14px;
+    box-shadow: 0px 3px 16px 0px rgba(157, 175, 185, 0.25);
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    &:focus,
+    &:hover {
+      outline: none;
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.25);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.25);
+      box-shadow: 0px 0px 10px 0px rgba(119, 119, 119, 0.25);
+    }
+  }
+}
+
+.select-list {
+
+  ul {
+    > li {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.label__holder {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+}
+
+.exit--pages {
+
+  padding: 30px 0;
+  max-width: 600px;
+
+  @include breakpoint ($sm) {
+    padding: 20px;
+  }
+
+  .content {
+    background: $white;
+  }
+  h1 {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 41px;
+
+    span {
+      font-size: 20px;
+
+      display: block;
+    }
+
+    @include breakpoint ($sm) {
+      font-size: 30px;
+
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+  p {
+    margin-bottom: 25px;
+    font-size: 17px;
+    a {
+      color: #487ac1;
+    }
+  }
+
+  .survey-action {
+    padding: 20px 0;
+  }
+}
+
+.NA-label {
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.lang-selector {
+  float: left;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 20px;
+
+  .lang__dropdown {
+    float: right;
+    width: 30%;
+    @include breakpoint ($sm) {
+      width: 50%;
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}

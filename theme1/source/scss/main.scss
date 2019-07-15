@@ -1,0 +1,40 @@
+/* Adhoc survey */
+
+// dependencies
+@import 'config'; // variables declarations
+@import 'mixins'; // useful mixins
+@import 'engine/mixin-respondTo'; // useful mixins
+// vendor
+@import 'grid';
+//@import 'vendor/icomoon/icomoon';
+@import 'material-icons';
+
+// helpers
+@import 'placeholders'; // useful code snippets that can be extended using @extend
+@import 'engine/helpers'; // useful code snippets that can be extended using @extend
+@import 'engine/foundation';
+// structure
+@import 'layout'; // defines the whole layouts
+@import 'buttons'; // button
+@import 'sidebar';
+@import 'questions';
+@import 'rating';
+//@import 'table';
+@import 'radio';
+@import 'radioimage';
+@import 'rtltypo';
+// content
+@import 'base'; // type styles
+@import 'typography'; // type styles
+@import 'mixinsbasic';
+@import 'progress';
+@import 'modal';
+@import 'starrating';
+@import 'otherpages';
+@import 'vendor/bootstrap-select/variables';
+@import 'vendor/bootstrap-select/bootstrap-select';
+@import 'vendor/bootstrap-datetimepicker';
+@import 'library';
+@import 'primeng-overwrites';
+// language
+@import 'lang-ar';

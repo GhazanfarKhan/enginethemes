@@ -1,0 +1,858 @@
+// mixins.scss
+// contains all the mixins used
+// ----------------------------------------------------------------------------------------
+// `Helpers
+// remove unit
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+// add unit
+@function add-unit( $num, $unit: px) {
+    @return ($num + $unit);
+}
+
+// clean-unit
+@function handle-unit($num) {
+    @if unitless($num) {
+        @return add-unit( $num);
+    }
+    @else {
+        @return $num;
+    }
+}
+
+/// Mixin helper to output vendor-prefixed CSS. Not required if using prefixr API
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+    }
+    #{$property}: $value;
+}
+
+// -----------------------------------------------------------
+// `Conversions:
+// px to em
+@function emify($target, $context) {
+    @if $target==0 {
+        @return 0
+    }
+    @return $target / $context + 0em;
+}
+
+// Make px to ems using base-font-size
+// echo as: font-size: em-font(#px);
+@function em-font($target, $context: $base-font-size) {
+    @return emify($target, $context);
+}
+
+// Make px to ems using base-line-height
+// echo as: font-size: em-base(#px);
+@function em-base($target, $context: $base-line-height) {
+    @return emify($target, $context);
+}
+
+// px to rem
+@function remify($pxSize) {
+    $remSize: $pxSize / 10px;
+    @return #{$remSize}rem;
+}
+
+// HEX to RGBA
+@mixin rgba($color, $value) {
+    background-color: $color;
+    background-color: rgba($color, $value);
+}
+
+// ----------------------------------------------------------
+// `Media
+// Arrows
+@mixin createArrow($size:5px, $direction:left) {
+    border-width: $size;
+    border-color: transparent;
+    border-style: solid;
+    display: inline-block;
+    height: 0px;
+    width: 0px;
+    @if $direction=="right" {
+        border-left-color: $navbgblue;
+        border-right-width: 0px;
+    }
+    @else if $direction=="left" {
+        border-right-color: $navbgblue;
+        border-left-width: 0px;
+    }
+    @else if $direction=="up" {
+        border-bottom-color: $navbgblue;
+        border-top-width: 0px;
+    }
+    @else if $direction=="down" {
+        border-top-color: $navbgblue;
+        border-bottom-width: 0px;
+    }
+}
+
+// svg bg image fallback to png with retina support
+@mixin background-image($name, $size:false) {
+    background-image: url(#{$path_images}/#{$svg_sprite}##{$name}); // unfortunateluy doesn't work in chrome for some security reasons
+    @if($size) {
+        background-size: $size;
+    }
+    .no-svg & {
+        background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+        @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+            background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+        }
+    }
+}
+
+// png sprite
+@mixin createIcon($width, $height, $background-pos: '0 0', $pseudo: '') {
+    // when the icon is used in a separate tag, ie, i.icon or span.icon
+    @if $pseudo=='' {
+        background: transparent url('#{$mainSprite}') no-repeat;
+        background-position: $background-pos;
+        width: $width;
+        height: $height;
+        display: inline-block;
+        vertical-align: top;
+        zoom: 1;
+        /* Fix for IE7 */
+        *display: inline;
+        /* Fix for IE7 */
+    }
+    // when used with pseudo element :before or :after
+    @if $pseudo !='' {
+        &:#{$pseudo} {
+            background: transparent url('#{$mainSprite}') no-repeat;
+            background-position: $background-pos;
+            width: $width;
+            height: $height;
+            display: inline-block;
+            vertical-align: top;
+            zoom: 1;
+            /* Fix for IE7 */
+            *display: inline;
+            /* Fix for IE7 */
+            content: '';
+            padding-left: $width + 5px;
+            /* adding space from left */
+        }
+    }
+}
+
+// Cross browser opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity * 100})";
+}
+
+/// Background gradient helper
+/// @example scss - Usage
+///   .foo {
+///     @include background-gradient(red, black, 'vertical');
+///   }
+/// @example css - Result
+///   .foo {
+///     background: -webkit-linear-gradient(top, red, black);
+///     background: linear-gradient(to bottom, red, black);
+///   }
+@mixin background-gradient($start-color,
+$end-color,
+$orientation) {
+    background: $start-color;
+    @if $orientation=='vertical' {
+        background: -webkit-linear-gradient(top, $start-color, $end-color);
+        background: linear-gradient(to bottom, $start-color, $end-color);
+    }
+    @else if $orientation=='horizontal' {
+        background: -webkit-linear-gradient(left, $start-color, $end-color);
+        background: linear-gradient(to right, $start-color, $end-color);
+    }
+    @else {
+        background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+        background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+//-------------------------------------------------------------
+// `Structure 
+// Box sizing
+@mixin box-sizing($type: border-box) {
+    box-sizing: #{$type};
+}
+
+/// Horizontally and vertically centers block elements
+// @mixin center-both {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+// }
+// see the mixin 'center' below
+// Box-shadow
+@mixin box-shadow( $horiz: .5em,
+$vert: .5em,
+$blur: 0px,
+$spread: 0px,
+$color: #000000) {
+    // -webkit-box-shadow: $horiz $vert $blur $spread $color;
+    // -moz-box-shadow: $horiz $vert $blur $spread $color;
+    // box-shadow: $horiz $vert $blur $spread $color;
+    @include prefix('box-shadow',
+    $horiz $vert $blur $spread $color,
+    'webkit' 'moz');
+}
+
+// ----------------------------------------------------------
+// `Alignment
+// place element in center of the container; 
+@mixin old-school-center($width,
+$height) {
+    width: $width;
+    height: $height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -($height/2);
+    margin-left: -($width/2);
+}
+
+// Center align anything
+@mixin center ( $direction: both,
+$dim1: null,
+$dim2: $dim1) {
+    // if no direction is set, center align from both horizontal and vertical
+    @if $direction==both {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include prefix (transform,
+        translate(-50%,
+        -50%),
+        'webkit' 'ms');
+        @if $dim1 and $dim2 {
+            $width: $dim1;
+            $height: $dim2;
+            width: $width;
+            height: $height;
+            @include ie {
+                /* fallback for ie that doesn't support translate */
+                margin-left: -($width/2);
+                margin-top: -($height/2);
+            }
+        }
+    }
+    @else {
+        // check the direction
+        @if $direction=='vertical' {
+            position: absolute;
+            top: 50%;
+            @include prefix (transform,
+            translateY(-50%),
+            'webkit' 'ms');
+            @if $dim1 {
+                $height: $dim1;
+                height: $height;
+                @include ie {
+                    /* fallback for ie that doesn't support translate */
+                    margin-top: -($height/2);
+                }
+            }
+        }
+        // for horizontal
+        @else if $direction=='horizontal' {
+            @if $dim1 {
+                width: $dim1;
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                float: none;
+            }
+            @else {
+                display: table;
+                margin-right: auto;
+                margin-left: auto;
+                float: none;
+            }
+        }
+    }
+} // @center
+// ----------------------------------------------------------
+// `Borders
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+/// Separated border-radius helpers
+/// @example scss - Usage
+///   .foo {
+///     @include border-radius-separate(1px, 2px, 3px, 4px);
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-border-top-left-radius: 1px;
+///     -moz-border-top-left-radius: 1px;
+///     border-top-left-radius: 1px;
+///     -webkit-border-top-right-radius: 2px;
+///     -moz-border-top-right-radius: 2px;
+///     border-top-right-radius: 2px;
+///     -webkit-border-bottom-right-radius: 3px;
+///     -moz-border-bottom-right-radius: 3px;
+///     border-bottom-right-radius: 3px;
+///     -webkit-border-bottom-left-radius: 4px;
+///     -moz-border-bottom-left-radius: 4px;
+///     border-bottom-left-radius: 4px;
+///   }
+@mixin border-radius-separate($top-left-radius,
+$top-right-radius,
+$bottom-right-radius,
+$bottom-left-radius) {
+    @include prefix(border-top-left-radius,
+    $top-left-radius,
+    'webkit' 'moz');
+    @include prefix(border-top-right-radius,
+    $top-right-radius,
+    'webkit' 'moz');
+    @include prefix(border-bottom-right-radius,
+    $bottom-right-radius,
+    'webkit' 'moz');
+    @include prefix(border-bottom-left-radius,
+    $bottom-left-radius,
+    'webkit' 'moz');
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+// ----------------------------------------------------------
+// `Typography
+// Add font-face
+@mixin font-face($font: $primary-font,
+$font_file: $font,
+$weight: normal,
+$style: normal) {
+    @font-face {
+        font-family: $font;
+        src: url('#{$path_fonts}/#{$font_file}.eot');
+        src: url('#{$path_fonts}/#{$font_file}.eot?#iefix') format('embedded-opentype'),
+        url('#{$path_fonts}/#{$font_file}.woff') format('woff'),
+        url('#{$path_fonts}/#{$font_file}.ttf') format('truetype'),
+        url('#{$path_fonts}/#{$font_file}.svg##{$font}') format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+        @font-face {
+            font-family: $font;
+            src: url('#{$path_fonts}/#{$font_file}.svg##{$font}') format('svg');
+        }
+    }
+}
+
+// Simple fallback for font-size for older browsers
+@mixin font-size($pxSize) {
+    font-size: $pxSize; //Fallback in px
+    font-size: remify($pxSize);
+}
+
+/// Embossing text shadow
+/// @access public
+/// @param {Float} $value - Opacity value
+/// @example scss - Usage
+///   .foo {
+///     @include text-shadow(0.5);
+///   }
+/// @example css - Result
+///   .foo {
+///     text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+///   }
+@mixin text-shadow($value) {
+    text-shadow: rgba(255, 255, 255, $value) 0 1px 0;
+}
+
+// ----------------------------------------------------------
+// `Responsive
+@function mobile-first() {
+    @if ($mobile_first_approach) {
+        @return 'min-width';
+    }
+    @else {
+        @return 'max-width';
+    }
+}
+
+@mixin breakpoint ( $arg1: null,
+$arg2: null) {
+    $width_break: mobile-first();
+    // Change min-width to max-width if not using mobile-first approach, the default is tablet
+    @if ($arg1) {
+        // if the argument is set
+        @if type-of($arg1)=="number" {
+            // if the argument is a number
+            @if not ($arg2) {
+                @media only screen and (#{$width_break}: $arg1) {
+                    @content;
+                }
+            }
+            @else {
+                @media only screen and (min-width: $min) and ( max-width: $max) {
+                    @content;
+                }
+            }
+        }
+        @else if type-of($arg1)=="string" {
+            // if the argument is string, we are talking about device based breakpoints
+            $model: $arg1;
+            $orientation: $arg2;
+            // iphone4s
+            @if $model=='iphone4s' {
+                // portrait        
+                @if $orientation=='portrait' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 4/4s landscape
+                @else if $orientation=='landscape' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                // both
+                @else {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+                        @content;
+                    }
+                }
+            } // /iphone4s
+            @else if $model=='iphone5s' {
+                // iphone 5/5s portrait
+                @if $orientation=='portrait' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 5/5s landscape
+                @else if $orientation=='landscape' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                // both landscape and portrait by default
+                @else {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+                        @content;
+                    }
+                }
+            } // /iphone5s
+            @else if $model=='iphone6' {
+                // iphone 6 portrait
+                @if $orientation=='portrait' {
+                    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 6 landscape
+                @else if $orientation=='landscape' {
+                    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                // both landscape and portrait by default for iphone 6
+                @else {
+                    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+                        /* iphone6 */
+                        @content;
+                    }
+                }
+            } // /iphone6
+            // both landscape and portrait by default for iphone 6 plus
+            @elseif $model=='iphone6plus' {
+                // iphone 6 plus portrait
+                @if $orientation=='portrait' {
+                    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 6 plus landscape
+                @else if $orientation=='landscape' {
+                    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                @else {
+                    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+                        @content;
+                    }
+                }
+            } // /iphone6plus
+        }
+    }
+    @else {
+        // if nothing passed, use tablet size
+        @media only screen and (#{$width_break}: $sm) {
+            @content;
+        }
+    }
+}
+
+@mixin maxWidth ($maxWidth: $xs) {
+    @media only screen and (max-width: $maxWidth) {
+        @content;
+    }
+}
+
+// @mixin device ( $model: $most_used_device, $orientation: 'both' ) {
+//       // both landscape and portrait by default for iphone 4 and 4s
+//     @if $model == 'iphone4s' {
+//         // portrait        
+//         @if $orientation == 'portrait' {
+//           @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+//             @content;
+//           }
+//         }
+//         // iphone 4/4s landscape
+//         @else if $orientation == 'landscape' {
+//           @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+//             @content;
+//           }
+//         }
+//         // both
+//         @else {
+//           @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+//               @content;
+//           }
+//         }
+//     }
+//     @else if $model == 'iphone5s' {
+//       // iphone 5/5s portrait
+//       @if $orientation == 'portrait' {
+//         @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) {
+//             @content;
+//           }
+//         }
+//         // iphone 5/5s landscape
+//       @else if $orientation == 'landscape' {
+//         @media only screen and (min-device-width: 320px) and (max-device-width: 568px)  and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape) {
+//             @content;
+//           }
+//       }
+//       // both landscape and portrait by default
+//       @else {
+//         @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+//             @content;
+//           }
+//       }
+//     }
+//       @else if $model == 'iphone6' {
+//         // iphone 6 portrait
+//         @if $orientation == 'portrait' {
+//           @media only screen   and (min-device-width: 375px)   and (max-device-width: 667px)   and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) { 
+//             @content;
+//           }
+//         }
+//         // iphone 6 landscape
+//         @else if $orientation == 'landscape' {
+//           @media only screen   and (min-device-width: 375px)   and (max-device-width: 667px)   and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape) {
+//               @content;
+//           }
+//         }
+//         // both landscape and portrait by default for iphone 6
+//         @else {
+//           @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+//             iphone6
+//             @content;
+//           }
+//         }          
+//       }
+//      // both landscape and portrait by default for iphone 6 plus
+//       @elseif $model == 'iphone6plus' {
+//         // iphone 6 plus portrait
+//         @if $orientation == 'portrait' {
+//           @media only screen   and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {  
+//             @content;
+//           }
+//         }
+//         // iphone 6 plus landscape
+//         @else if $orientation == 'landscape' {
+//           @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3)  and (orientation: landscape) {
+//               @content;
+//             }
+//           }
+//         @else {
+//           @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+//             @content;
+//           }
+//         }          
+//       }
+//     }        
+// @mixin respond($breakpoint:$sm) {
+//     // Change min-width to max-width if not using mobile-first approach, the default is tablet
+//     $value:strip-unit($breakpoint);  // Avoid repeatation of px
+//     @media only screen and (min-width: $value + px) {
+//         @content;
+//     }
+// }
+// Old version of breakpoint mixin
+// ---------------- Device Specific ----------------------
+// ipad
+@mixin ipad($orientation:both) {
+    // both landscape and portrait by default
+    @if $orientation=='both' {
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            /* Styles */
+            @content;
+        }
+    }
+    // for portrait
+    @else if $orientation=='portrait' {
+        @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+            /* Styles */
+            @content;
+        }
+    }
+    // for landscape
+    @else if $orientation=='landscape' {
+        @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+            /* Styles */
+            @content;
+        }
+    }
+}
+
+// // iphones
+// @mixin iphone(
+//  $model:'4s',
+//  $orientation: 'both'
+//  ) {
+//     // both landscape and portrait by default for iphone 4 and 4s
+//     @if $model == '4s'
+//     and $orientation == 'both' {
+//         @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+//             @content;
+//         }
+//     }
+//     // iphone 4/4s portrait
+//     @else if $model == '4s'
+//     and $orientation == 'portrait' {
+//      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+//        @content;
+//      }
+//     }
+//     // iphone 4/4s landscape
+//     @else if $model == '4s'
+//     and $orientation == 'landscape' {
+//      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+//        @content;
+//      }
+//     }
+//     // both landscape and portrait by default for iphone 5 and 5s
+//     @if $model == '5s'
+//     and $orientation == 'both' {
+//    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+//          @content;
+//         }
+//     }
+//     // iphone 5/5s portrait
+//     @else if $model == '5s'
+//     and $orientation == 'portrait' {
+//    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) {
+//        @content;
+//      }
+//     }
+//     // iphone 5/5s landscape
+//     @else if $model == '5s'
+//     and $orientation == 'landscape' {
+//    @media only screen and (min-device-width: 320px) and (max-device-width: 568px)  and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape) {
+//        @content;
+//      }
+//     }
+//     // both landscape and portrait by default for iphone 6
+//     @if $model == '6'
+//     and $orientation == 'both' {
+//    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+//          @content;
+//         }
+//     }
+//     // iphone 6 portrait
+//     @else if $model == '6'
+//     and $orientation == 'portrait' {
+//    @media only screen   and (min-device-width: 375px)   and (max-device-width: 667px)   and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) { 
+//        @content;
+//      }
+//     }
+//     // iphone 6 landscape
+//     @else if $model == '6'
+//     and $orientation == 'landscape' {
+//    @media only screen   and (min-device-width: 375px)   and (max-device-width: 667px)   and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape) {
+//        @content;
+//      }
+//     }
+//     // both landscape and portrait by default for iphone 6 plus
+//     @if $model == '6plus'
+//     and $orientation == 'both' {
+//    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+//          @content;
+//         }
+//     }
+//     // iphone 6 plus portrait
+//     @else if $model == '6plus'
+//     and $orientation == 'portrait' {
+//    @media only screen   and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {  
+//        @content;
+//      }
+//     }
+//     // iphone 6 plus landscape
+//     @else if $model == '6plus'
+//     and $orientation == 'landscape' {
+//    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3)  and (orientation: landscape) {
+//        @content;
+//      }
+//     }
+// }
+// --------------------------------------
+// User Interaction
+// keyframes
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes $animation-name {
+        @content;
+    }
+    @-moz-keyframes $animation-name {
+        @content;
+    }
+    @-ms-keyframes $animation-name {
+        @content;
+    }
+    @-o-keyframes $animation-name {
+        @content;
+    }
+    @keyframes $animation-name {
+        @content;
+    }
+}
+
+/// Given two opacity values, animates an element between those opacity values.
+/// @access public
+/// @param {Number} $fade-from [0] - The beginning opacity value.
+/// @param {Number} $fade-to [1] - The final opacity value.
+/// @param {List} $animation-properties [1s ease] - The animation properties to apply.
+/// @example scss - Usage
+///   .foo {
+///     @include fade(.8, .2, 3s linear);
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-animation: fade-0-8-0-2 3s linear;
+///     animation: fade-0-8-0-2 3s linear;
+///   }
+/// // (the @keyframes are also generated with a -webkit- vendor prefix)
+///   @keyframes fade-0-8-0-2 {
+///     from {
+///       opacity: 0.8;
+///       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+///     }
+///     to {
+///       opacity: 0.2;
+///       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+///     }
+///   }
+@mixin fade($fade-from: 0,
+$fade-to: 1,
+$animation-properties: 1s ease) {
+    $alias: fade- + str-replace($fade-from + '', '.', '-') + '-' + str-replace($fade-to + '', '.', '-');
+    @include keyframes($alias) {
+        from {
+            @include opacity($fade-from);
+        }
+        to {
+            @include opacity($fade-to);
+        }
+    }
+    @include prefix(animation,
+    $alias $animation-properties,
+    'webkit');
+}
+
+// // transition 
+// @mixin transition( $property: all, $duration: 1s, $func: linear ) {
+//     @include transition-property($property); 
+//     @include transition-duration($duration); 
+//     @include transition-timing-function($func);
+// }
+@mixin transition($property: all,
+$time: 0.5s,
+$timing-function: ease-out) {
+    @include prefix(transition,
+    $property $time $timing-function,
+    'webkit');
+}
+
+// States
+@mixin state( $state: 'hover',
+$time: 1s,
+$timing-function: ease-in-out) {
+    // @include transition( $time: 1s, $timing-function: ease-in-out );
+    &:#{$state} {
+        @content;
+    }
+}
+
+// mixin for ie versions
+@mixin ie($version: "ie8") {
+    .lt-ie9 &,
+    .ie-8 & {
+        @content;
+    }
+}
+
+// Remove effects
+// @mixin remove ($property) {
+//   @include prefix ( #{$property}, none !important, 'webkit' 'moz' 'ms' 'o' );
+// }
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}

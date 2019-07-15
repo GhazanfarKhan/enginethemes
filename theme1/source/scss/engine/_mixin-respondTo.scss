@@ -1,0 +1,256 @@
+// respondTo(next, level)
+// This is probably all you need for your real responsive website. Writing media queries suck, literally.. and it sucks even more when you don't have something to let your UI objects respond on different browsers esp IE8 (I know even Microsoft does not support IE8 but unfortunately my does) or on different themes like on theme-1 it has soft-corners, while theme-b has crisp ones, moreover the the theme-someonesomewheregivesadamn has box shadow on the same object. What the hell, I need to make theme file then add this object there and edit it. And at that moment, I realized rensponsive does not mean mobile/tablet/desktop, its much more than that...
+// 
+// So I made this thing.
+// 
+// respondTo, respondTo(some number) {
+//  do stuff for mobilefirst or desktop first
+// }
+// 
+// respoondTo(device, orientation) {
+//  do stuff for passed device
+// }
+// 
+// respondTo (parent, 'theparent') {
+//    do stuff
+//  }
+//  
+//  respondTo(print) {
+//    do stuff
+//  }
+// Set your approach
+$mobile_first_approach: false;
+// let it check your approach
+@function mobile-first() {
+    @if ($mobile_first_approach) {
+        @return 'min-width';
+    }
+    @else {
+        @return 'max-width';  
+    }
+}
+
+// See your objects 'responding'
+@mixin respondTo ( $next: null, $level: null) {
+    $width_break: mobile-first();
+    // Change min-width to max-width if not using mobile-first approach, the default is tablet
+    @if ($next) {
+        // if the argument is set
+        @if type-of($next)=="number" {
+            // if the argument is a number
+            @if not ($level) {
+                @media only screen and (#{$width_break}: $next) {
+                    @content;
+                }
+            }
+            @else {
+                @media only screen and (min-width: #{$next}) and ( max-width: #{$level}) {
+                    @content;
+                }
+            }
+        }
+        @else if type-of($next)=="string" {
+            // if the argument is string, we are talking about device based breakpoints
+            // iphone4s
+            @if $next=='iphone4s' {
+                // portrait        
+                @if $level=='portrait' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 4/4s landscape
+                @else if $level=='landscape' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                // both
+                @else {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+                        @content;
+                    }
+                }
+            } // /iphone4s
+            @else if $next=='iphone5s' {
+                // iphone 5/5s portrait
+                @if $level=='portrait' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 5/5s landscape
+                @else if $level=='landscape' {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                // both landscape and portrait by default
+                @else {
+                    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+                        @content;
+                    }
+                }
+            } // /iphone5s
+            @else if $next=='iphone6' {
+                // iphone 6 portrait
+                @if $level=='portrait' {
+                    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 6 landscape
+                @else if $level=='landscape' {
+                    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                // both landscape and portrait by default for iphone 6
+                @else {
+                    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+                        /* iphone6 */
+                        @content;
+                    }
+                }
+            } // /iphone6
+            @elseif $next=='iphone6plus' {
+                // iphone 6 plus portrait
+                @if $level=='portrait' {
+                    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+                        @content;
+                    }
+                }
+                // iphone 6 plus landscape
+                @else if $level=='landscape' {
+                    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+                        @content;
+                    }
+                }
+                @else {
+                    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+                        @content;
+                    }
+                }
+            } // /iphone6plus
+            @elseif $next=='xs-only' {
+                @media only screen and (max-width: #{$xs}) {
+                    @content;
+                }
+            } // /xs-only
+            @elseif $next=='sm-only' {
+                @media only screen and (min-width: #{$sm}) and (max-width: (#{$md} - 1)) {
+                    @content;
+                }
+            } // /sm-only
+            @elseif $next=='md-only' {
+                @media only screen and (min-width: 991px) and (max-width: #{$lg}) {
+                    @content;
+                }
+            } // /sm-only
+            @elseif $next=='parent' {
+                #{$level} & {
+                    @content;
+                }
+            } // /sm-only
+            @elseif $next=='print' {
+                @media print {
+                    @content;
+                }
+            } // /sm-only
+        }
+    }
+    @else {
+        // if nothing passed, check mobilefirst or desktop first and do accordingly
+        @if ($mobile_first_approach) {
+            @media only screen and (#{$width_break}: $sm) {
+                @content;
+            }
+        }
+        @else {
+            @media only screen and (#{$width_break}: $md) {
+                @content;
+            }
+        }
+    }
+}
+
+// Tests
+// 
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+.respondToTest1 {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    height: 33.3%;
+    height: calc(100%/3);
+    &:before {
+        background-color: #ccc;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        font-size: 200%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: block;
+        text-align: center;
+        content: 'This is default mobilefirst.';
+    }
+    @include respondTo {
+        content: 'This is how it responds to tablets (and obove)';
+    }
+    @include respondTo($xs, $sm) {
+        content: 'This is how it responds between mobile landscape and tablet portrait';
+        background-color: #ccc;
+    }
+    @include respondTo(sm-only) {
+        // font-size: 400%;
+        // width: 100%;
+        content: 'This is how it responds between ONLY IN tablet.';
+    }
+    @include respondTo(xs-only) {
+        font-style: italic;
+        // font-size: 200%;
+        // width: 50%;
+        content: 'This is how it responds between ONLY IN phones.';
+    }
+    @include respondTo (print) {
+        background: #fff;
+        color: tomato;
+        // width: 600px;
+        // font-size: 400%;
+        text-align: center;
+        content: 'This is how it responds between ONLY IN print.';
+    }
+    @include respondTo(parent, '.lt-ie9') {
+        &:before {
+            background: transparent;
+            color: tomato;
+            // width: 600px;
+            // font-size: 400%;
+            // text-align: right;
+            text-decoration: underline;
+            content: 'This is default mobilefirst ONLY IN IE8.';
+        }
+    }
+    @include respondTo(parent, '#theme-dark') {
+        &:before {
+            background: #111;
+            color: #fff;
+            // width: 600px;
+            right: 0;
+            // height: 300px;
+            // font-size: 400%;
+            // text-align: right;
+            text-decoration: underline;
+            content: 'This is how it responds to dark theme.';
+            z-index: 100000;
+        }
+    }
+}
+

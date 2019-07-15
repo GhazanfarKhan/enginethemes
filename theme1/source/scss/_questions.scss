@@ -1,0 +1,249 @@
+.question__header {
+  padding: 30px;
+  float: left;
+  width: 69%;
+
+  @include breakpoint ($sm) {
+    width: 100%;
+    padding: 20px;
+
+  }
+}
+.section__header {
+  font-size: 26px;
+  font-weight: 400;
+  padding: 35px 30px 0;
+}
+.section__sub-header {
+  font-size: 21px;
+  font-weight: 300;
+  padding: 25px 30px 0;
+}
+.question {
+  position: relative;
+  padding: 35px 30px;
+  float: left;
+  width: 100%;
+
+  @include breakpoint ($sm) {
+    padding: 30px 20px;
+  }
+
+  &.question--multiple {
+    padding: 20px 50px;
+
+    @include breakpoint ($sm) {
+      // width: 100%;
+      padding: 20px;
+
+    }
+  }
+
+  .question__copy {
+    float: left;
+    width: 45%;
+    padding: 0 30px 0 0;
+    position: relative;
+
+    @include breakpoint ($lg) {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      color: $copy-clr;
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 34px;
+        height: 34px;
+        border: 2px solid $clr-pri;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 15px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #333333;
+        background: $white;
+        box-shadow: 0px 3px 16px 0px rgba(157, 175, 185, 0.25);
+        display: none;
+      }
+    }
+  }
+
+  .question__answer {
+    float: left;
+    position: relative;
+    width: 55%;
+
+    @include breakpoint ($sm) {
+      width: 100%;
+    }
+
+    .not-applicable {
+      float: left;
+      width: 15%;
+      text-align: center;
+      display: none;
+      @include breakpoint ($sm) {
+        width: 100%;
+        padding-right:50px;
+        margin-top: 15px;
+      }
+    }
+
+  }
+  .counter {
+    clear: both;
+    color: #aaa;
+    float: left;
+    font-size: 12px;
+    padding: 10px;
+  }
+  &.error {
+    .q__copy {
+      color: $notification;
+      span {
+        color: $notification;
+      }
+    }
+  }
+  &.full--width {
+    .question__copy, .question__answer {
+      width: 100%;
+    }
+    .question__copy {
+      padding-right: 0;
+      padding-bottom: 20px;
+      p {
+        padding-top: 5px;
+      }
+    }
+  }
+  .add-comment {
+    clear: both;
+    padding: 20px 0 0 0;
+
+    .question__copy{
+      p{
+        @include breakpoint ($sm) {
+          padding-left:0 !important;
+        }
+      }
+    }
+
+
+  }
+  .error__copy {
+    display: none;
+  }
+}
+
+
+.cpOverlay{
+  position: absolute;
+  width:85%;
+  background: $white;
+  height: 39px;
+  z-index: 1;
+  opacity: 0.8;
+  @include breakpoint ($sm) {
+    width: 100%;
+    bottom:32px;
+  }
+}
+.other-comments {
+  clear: both;
+  padding: 15px 0 0 0;
+}
+//required
+
+.required {
+  .textarea {
+    border-color: $notification;
+  }
+}
+
+.error {
+  background: #ffe5e5 !important;
+  .error__copy {
+    display: block;
+    clear: both;
+    font-size: 14px;
+    color: red;
+    padding: 10px 5px 0;
+  }
+}
+
+.color-stripes {
+  > .item {
+    @include clearfix();
+    border-bottom: 2px solid #efefef;
+    background: #fff;
+    &:nth-child(odd) {
+      background: #f4f5f9;
+    }
+  }
+  .row {
+    @include clearfix();
+  }
+}
+
+.has-number {
+  .question {
+    .question__copy {
+      p {
+        position: relative;
+        padding-left: 45px;
+        @include breakpoint ($sm) {
+          //padding-left: 15px;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+  .multiple--questions {
+    .question--full {
+      .question__copy {
+        p {
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.multiple--questions {
+  padding: 0 0 30px 0;
+  .survey-legends {
+    margin: 10px 0 20px 0;
+  }
+  .question {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    &:last-child {
+      border-bottom: none;
+    }
+    .question__copy {
+      p {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  .question--full {
+    border-bottom: none;
+    .question__copy {
+      width: 100%;
+    }
+  }
+}

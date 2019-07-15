@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Toyota Survey</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="loader-wrapper">
+    <div class="loader-inner">
+        <div class="loader-item">
+            <img src="img/loader.svg" alt="">
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal__background"></div>
+    <div class="modal__content">
+        <div class="modal__inner">
+            <div class="modal__copy">
+                <p>Please complete the question(s) in red.</p>
+            </div>
+            <div class="modal__action-buttons">
+                <a href="" class="btn btn--modal">Ok</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="img/logo.png" class="" alt="">
+        </a>
+        <div class="select-language">
+            <select class="selectpicker" data-width="100%" data-size="5" data-style="btn-select" title="Select Language">
+                <option>English</option>
+                <option>Language 02</option>
+                <option>Language 03</option>
+                <option>Language 04</option>
+                <option>Language 05</option>
+                <option>Language 06</option>
+                <option>Language 07</option>
+            </select>
+        </div>
+        <h3 class="slogan"> Toyota Experience Survey</h3>
+    </header>
+
+    <main class="main">
+        <div class="banner">
+            <img src="img/banner.jpg" alt="">
+        </div>
+        <div class="content has-number color-stripes">
+            <div class="content-header">
+                <h2>We'd like to learn more about your experience with [Toyota dealership name].</h2>
+                <p>Please tell us, on a scale from 0-10, how much do you agree with the following statements: <br>
+                    If one of the statement is not relevant to your experience please select Not Applicable</p>
+            </div>
+            <div class="row item error">
+                <div class="survey-legends sm--hidden">
+                    <div class="legend">
+                        <span class="legend__label">Completely disagree</span>
+                        <span class="legend__label text-right">Completely agree  </span>
+                    </div>
+                    <div class="legend__notapplicable">
+                        <span class="legend__label">
+                            N/A
+                        </span>
+                    </div>
+                    <div class="legend-bar"> </div>
+                </div>
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">1</span>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="legend show--sm">
+                            <span class="legend__label">Completely disagree</span>
+                            <span class="legend__label text-right">Completely agree  </span>
+                        </div>
+                        <ul class="rating-list">
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option0" tabindex="0" value="0">
+                                <label class="rating__label " for="option0"><span>0</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option212" tabindex="1" value="1">
+                                <label class="rating__label " for="option212"><span>1</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" checked type="radio" name="Survey.Questions[0].QuestAnswer" id="option222" tabindex="1" value="2">
+                                <label class="rating__label" for="option222"><span>2</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option232" tabindex="1" value="3">
+                                <label class="rating__label" for="option232"><span>3</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option242" tabindex="1" value="4">
+                                <label class="rating__label" for="option242"><span>4</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option252" tabindex="1" value="5">
+                                <label class="rating__label" for="option252"><span>5</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option262" tabindex="1" value="6">
+                                <label class="rating__label" for="option262"><span>6</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option272" tabindex="1" value="7">
+                                <label class="rating__label" for="option272"><span>7</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option282" tabindex="1" value="8">
+                                <label class="rating__label" for="option282"><span>8</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option292" tabindex="1" value="9">
+                                <label class="rating__label" for="option292"><span>9</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option302" tabindex="1" value="10">
+                                <label class="rating__label" for="option302"><span>10</span></label>
+                            </li>
+                        </ul>
+                        <div class="not-applicable">
+                            <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="optionna" tabindex="1" value="10"> <label class="rating__label" for="optionna"><span>N/A</span></label>
+                        </div>
+                        <div class="error__copy">
+                            Error Message Goes here
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">2</span>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <textarea class="textarea" placeholder="Please add comment.."></textarea>
+                        <span class="counter">Characters left 2000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <h3 class="section__header">Section Header</h3>
+                <h4 class="section__sub-header">Sub Section Header</h4>
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">3</span>And lastly, we'd like to learn more about your experience with [Toyota dealership name].</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="radio-list">
+                            <input type="radio" id="radio-1" name="featured" checked="">
+                            <label class="field__label" for="radio-1">Yes</label>
+                            <input type="radio" id="radio-2" name="featured">
+                            <label class="field__label" for="radio-2">No </label>
+                        </div>
+                    </div>
+                    <div class="add-comment">
+                        <div class="question__copy">
+                            <p><a href="#">ADD COMMENT</a></p>
+                        </div>
+                        <div class="question__answer">
+                            <textarea class="textarea" placeholder="Add your comment here" ></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">3</span>And lastly, we'd like to learn more about your experience with [Toyota dealership name].</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="checkbox-list">
+                            <input type="checkbox" id="checkbox-1" name="checkboxgrid" checked="">
+                            <label class="field__label" for="checkbox-1">Option 01</label>
+                            <input type="checkbox" id="checkbox-2" name="checkboxgrid">
+                            <label class="field__label" for="checkbox-2">Option 02</label>
+                            <input type="checkbox" id="checkbox-3" name="checkboxgrid">
+                            <label class="field__label" for="checkbox-3">Options can grow as well</label>
+                            <input type="checkbox" id="checkbox-4" name="checkboxgrid">
+                            <label class="field__label" for="checkbox-4">Option 04 here</label>
+                            <input type="checkbox" id="checkbox-5" name="checkboxgrid">
+                            <label class="field__label" for="checkbox-5">Option 05</label>
+                            <input type="checkbox" id="checkbox-6" name="checkboxgrid">
+                            <label class="field__label" for="checkbox-6">Option 06</label>
+                        </div>
+                    </div>
+                    <div class="add-comment">
+                        <div class="question__copy">
+                            <p><a href="#">ADD COMMENT</a></p>
+                        </div>
+                        <div class="question__answer">
+                            <textarea class="textarea" placeholder="Add your comment here" ></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row item error">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">4</span>And lastly, we'd like to learn more about your experience with [Toyota dealership name].</p>
+                    </div>
+                    <div class="question__answer">
+                        <select class="selectpicker" data-width="100%" data-style="btn-select" title="Select your answer">
+                            <option>Yes, I have</option>
+                            <option>Yes, I have</option>
+                            <option>Yes, I have</option>
+                        </select>
+                        <div class="other-comments">
+                            <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                        </div>
+                        <div class="error__copy">
+                            Error Message Goes here
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item without--na">
+                <div class="survey-legends sm--hidden">
+                    <div class="legend">
+                        <span class="legend__label">Completely disagree</span>
+                        <span class="legend__label text-right">Completely agree  </span>
+                    </div>
+                    <div class="legend-bar">
+
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">5</span>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+
+                    <div class="question__answer">
+                        <div class="legend show--sm">
+                            <span class="legend__label">Completely disagree</span>
+                            <span class="legend__label text-right">Completely agree  </span>
+                        </div>
+                        <ul class="rating-list">
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option00" tabindex="1" value="0">
+                                <label class="rating__label " for="option00"><span>0</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2212" tabindex="1" value="1">
+                                <label class="rating__label " for="option2212"><span>1</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" checked type="radio" name="Survey.Questions[0].QuestAnswer" id="option2222" tabindex="1" value="2">
+                                <label class="rating__label " for="option2222"><span>2</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2232" tabindex="1" value="3">
+                                <label class="rating__label " for="option2232"><span>3</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2242" tabindex="1" value="4">
+                                <label class="rating__label " for="option2242"><span>4</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2252" tabindex="1" value="5">
+                                <label class="rating__label " for="option2252"><span>5</span></label>
+                            </li>
+
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2262" tabindex="1" value="6">
+                                <label class="rating__label " for="option2262"><span>6</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2272" tabindex="1" value="7">
+                                <label class="rating__label " for="option2272"><span>7</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2282" tabindex="1" value="8">
+                                <label class="rating__label " for="option2282"><span>8</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option2292" tabindex="1" value="9">
+                                <label class="rating__label " for="option2292"><span>9</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="option3302" tabindex="1" value="10">
+                                <label class="rating__label " for="option3302"><span>10</span></label>
+                            </li>
+                        </ul>
+                        <div class="other-comments">
+                            <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">6</span>And lastly, we'd like to learn more about your experience with [Toyota dealership name].</p>
+                    </div>
+                    <div class="question__answer">
+                        <select class="selectpicker" data-width="100%" multiple data-style="btn-select" title="Select your answer - Multiple Options">
+                            <option>Option 01</option>
+                            <option>Option 02</option>
+                            <option>Option 03</option>
+                            <option>Option 04</option>
+                            <option>Option 05</option>
+                            <option>Option 06</option>
+                        </select>
+                        <div class="other-comments">
+                            <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">7</span>Would you mind telling us what other brands you are also considering?</p>
+                    </div>
+                    <div class="question__answer select-list">
+                        <ul>
+                            <li class="label__holder">Label Text</li>
+                            <li>
+                                <select class="selectpicker" data-width="100%" data-style="btn-select" title="Select Category">
+                                    <option>Yes, I have</option>
+                                    <option>Yes, I have</option>
+                                    <option>Yes, I have</option>
+                                </select>
+                            </li>
+                            <li class="label__holder">Label Text</li>
+                            <li>
+                                <select class="selectpicker" data-width="100%" data-style="btn-select" title="Select Brand">
+                                    <option>Yes, I have</option>
+                                    <option>Yes, I have</option>
+                                    <option>Yes, I have</option>
+                                </select>
+                            </li>
+                            <li class="label__holder">Label Text</li>
+                            <li>
+                                <select class="selectpicker" data-width="100%" data-style="btn-select" title="Select Model">
+                                    <option>Yes, I have</option>
+                                    <option>Yes, I have</option>
+                                    <option>Yes, I have</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="row item">
+                <div class="question full--width">
+                    <div class="question__copy">
+                        <p><span class="question__no">8</span>Would you mind telling us what other brands you are also considering?</p>
+                    </div>
+                    <div class="question__answer">
+                        <ul class="radio-image">
+                            <li>
+                                <input class="rating__field" type="radio" name="radioimage" id="choice01" tabindex="0" value="0">
+                                <label class="rating__label " for="choice01">
+                                    <img src="img/temp-radioimage.jpg" alt="">
+                                    <p><span>A</span>Choice 01</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="radioimage" id="choice02" tabindex="1" value="1">
+                                <label class="rating__label " for="choice02">
+                                    <img src="img/temp-radioimage.jpg" alt="">
+                                    <p><span>B</span>Choice 02</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input class="rating__field" checked type="radio" name="radioimage" id="choice03" tabindex="1" value="2">
+                                <label class="rating__label" for="choice03">
+                                    <img src="img/temp-radioimage.jpg" alt="">
+                                    <p><span>C</span>Choice 03</p>
+                                </label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="radioimage" id="choice04" tabindex="1" value="3">
+                                <label class="rating__label" for="choice04">
+                                    <img src="img/temp-radioimage.jpg" alt="">
+                                    <p><span>D</span>Choice 04</p>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">9</span>Would you mind telling us what other brands you are also considering?</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="star-rating">
+                            <div class="star-rating-list">
+                                <input type="radio" id="rating-5" name="rating" value="good" /><label for="rating-5">Good</label>
+                                <input type="radio" id="rating-4" name="rating" value="fair" checked="checked" /><label for="rating-4">Fair</label>
+                                <input type="radio" id="rating-3" name="rating" value="average" /><label for="rating-3">Average</label>
+                                <input type="radio" id="rating-2" name="rating" value="bad" /><label for="rating-2">Bad</label>
+                                <input type="radio" id="rating-1" name="rating" value="worse" /><label for="rating-1">Worse</label>
+                                <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item multiple--questions">
+                <div class="question question--full">
+                    <div class="question__copy">
+                        <p><span class="question__no">10</span>Please tell us, on a scale from 0-10, how much do you agree with the following statements:<br>
+                            If one of the statement is not relevant to your experience please select Not Applicable</p>
+                    </div>
+                </div>
+                <div class="survey-legends sm--hidden">
+                    <div class="legend">
+                        <span class="legend__label">Completely disagree</span>
+                        <span class="legend__label text-right">Completely agree  </span>
+                    </div>
+                    <div class="legend__notapplicable">
+                        <span class="legend__label">
+                            N/A
+                        </span>
+                    </div>
+                    <div class="legend-bar"> </div>
+                </div>
+                <div class="question">
+                    <div class="question__copy">
+                        <p>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="legend show--sm">
+                            <span class="legend__label">Completely disagree</span>
+                            <span class="legend__label text-right">Completely agree  </span>
+                        </div>
+                        <ul class="rating-list">
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option0" tabindex="0" value="0">
+                                <label class="rating__label " for="00option0"><span>0</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option212" tabindex="1" value="1">
+                                <label class="rating__label " for="00option212"><span>1</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option222" tabindex="1" value="2">
+                                <label class="rating__label" for="00option222"><span>2</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option232" tabindex="1" value="3">
+                                <label class="rating__label" for="00option232"><span>3</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option242" tabindex="1" value="4">
+                                <label class="rating__label" for="00option242"><span>4</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option252" tabindex="1" value="5">
+                                <label class="rating__label" for="00option252"><span>5</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option262" tabindex="1" value="6">
+                                <label class="rating__label" for="00option262"><span>6</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option272" tabindex="1" value="7">
+                                <label class="rating__label" for="00option272"><span>7</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option282" tabindex="1" value="8">
+                                <label class="rating__label" for="00option282"><span>8</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option292" tabindex="1" value="9">
+                                <label class="rating__label" for="00option292"><span>9</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00option302" tabindex="1" value="10">
+                                <label class="rating__label" for="00option302"><span>10</span></label>
+                            </li>
+                        </ul>
+                        <div class="not-applicable">
+                            <input class="rating__field" type="radio" name="Survey.Questions[0].QuestAnswer" id="00optionna" tabindex="1" value="10"> <label class="rating__label" for="00optionna"><span>N/A</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question__copy">
+                        <p>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="legend show--sm">
+                            <span class="legend__label">Completely disagree</span>
+                            <span class="legend__label text-right">Completely agree  </span>
+                        </div>
+                        <ul class="rating-list">
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option0" tabindex="0" value="0">
+                                <label class="rating__label " for="01option0"><span>0</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option212" tabindex="1" value="1">
+                                <label class="rating__label " for="01option212"><span>1</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option222" tabindex="1" value="2">
+                                <label class="rating__label" for="01option222"><span>2</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option232" tabindex="1" value="3">
+                                <label class="rating__label" for="01option232"><span>3</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option242" tabindex="1" value="4">
+                                <label class="rating__label" for="01option242"><span>4</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option252" tabindex="1" value="5">
+                                <label class="rating__label" for="01option252"><span>5</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option262" tabindex="1" value="6">
+                                <label class="rating__label" for="01option262"><span>6</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option272" tabindex="1" value="7">
+                                <label class="rating__label" for="01option272"><span>7</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option282" tabindex="1" value="8">
+                                <label class="rating__label" for="01option282"><span>8</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option292" tabindex="1" value="9">
+                                <label class="rating__label" for="01option292"><span>9</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01option302" tabindex="1" value="10">
+                                <label class="rating__label" for="01option302"><span>10</span></label>
+                            </li>
+                        </ul>
+                        <div class="not-applicable">
+                            <input class="rating__field" type="radio" name="Survey.Questions[01].QuestAnswer" id="01optionna" tabindex="1" value="10"> <label class="rating__label" for="01optionna"><span>N/A</span></label>
+                        </div>
+                        <div class="other-comments">
+                            <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question__copy">
+                        <p>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="legend show--sm">
+                            <span class="legend__label">Completely disagree</span>
+                            <span class="legend__label text-right">Completely agree  </span>
+                        </div>
+                        <ul class="rating-list">
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option0" tabindex="0" value="0">
+                                <label class="rating__label " for="02option0"><span>0</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option212" tabindex="1" value="1">
+                                <label class="rating__label " for="02option212"><span>1</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option222" tabindex="1" value="2">
+                                <label class="rating__label" for="02option222"><span>2</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option232" tabindex="1" value="3">
+                                <label class="rating__label" for="02option232"><span>3</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option242" tabindex="1" value="4">
+                                <label class="rating__label" for="02option242"><span>4</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option252" tabindex="1" value="5">
+                                <label class="rating__label" for="02option252"><span>5</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option262" tabindex="1" value="6">
+                                <label class="rating__label" for="02option262"><span>6</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option272" tabindex="1" value="7">
+                                <label class="rating__label" for="02option272"><span>7</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option282" tabindex="1" value="8">
+                                <label class="rating__label" for="02option282"><span>8</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option292" tabindex="1" value="9">
+                                <label class="rating__label" for="02option292"><span>9</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02option302" tabindex="1" value="10">
+                                <label class="rating__label" for="02option302"><span>10</span></label>
+                            </li>
+                        </ul>
+                        <div class="not-applicable">
+                            <input class="rating__field" type="radio" name="Survey.Questions[02].QuestAnswer" id="02optionna" tabindex="1" value="10"> <label class="rating__label" for="02optionna"><span>N/A</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question__copy">
+                        <p>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="legend show--sm">
+                            <span class="legend__label">Completely disagree</span>
+                            <span class="legend__label text-right">Completely agree  </span>
+                        </div>
+                        <ul class="rating-list">
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option0" tabindex="0" value="0">
+                                <label class="rating__label " for="03option0"><span>0</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option212" tabindex="1" value="1">
+                                <label class="rating__label " for="03option212"><span>1</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option222" tabindex="1" value="2">
+                                <label class="rating__label" for="03option222"><span>2</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option232" tabindex="1" value="3">
+                                <label class="rating__label" for="03option232"><span>3</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option242" tabindex="1" value="4">
+                                <label class="rating__label" for="03option242"><span>4</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option252" tabindex="1" value="5">
+                                <label class="rating__label" for="03option252"><span>5</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option262" tabindex="1" value="6">
+                                <label class="rating__label" for="03option262"><span>6</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option272" tabindex="1" value="7">
+                                <label class="rating__label" for="03option272"><span>7</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option282" tabindex="1" value="8">
+                                <label class="rating__label" for="03option282"><span>8</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option292" tabindex="1" value="9">
+                                <label class="rating__label" for="03option292"><span>9</span></label>
+                            </li>
+                            <li>
+                                <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03option302" tabindex="1" value="10">
+                                <label class="rating__label" for="03option302"><span>10</span></label>
+                            </li>
+                        </ul>
+                        <div class="not-applicable">
+                            <input class="rating__field" type="radio" name="Survey.Questions[03].QuestAnswer" id="03optionna" tabindex="1" value="10"> <label class="rating__label" for="03optionna"><span>N/A</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question full--width">
+                    <!-- text of question -->
+                    <div class="question__copy">
+                        <p><span class="question__no">11</span> During delivery, did someone from the dealership: - CHECKBOX GRID</p>
+                    </div>
+                    <div class="grid-list">
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list checkbox--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01a" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid01a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01b" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01c" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01d" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01e" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01o" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid01o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01f" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01g" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01h" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01i" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01i"></label>
+                                </li>
+                            </ul>
+                            <ul class="grid-rating-list checkbox--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01aa" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid01aa"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01bb" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01bb"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01cc" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01cc"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01dd" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01dd"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01ee" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01ee"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01oo" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid01oo"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01ff" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01ff"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01gg" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01gg"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01hh" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01hh"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="checkbox" name="grid01" id="grid01ii" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid01ii"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list checkbox--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02a" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid02a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02b" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02c" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02d" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02e" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02o" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid02o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02f" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02g" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02h" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="checkbox" name="grid02" id="grid02i" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid02i"></label>
+                                </li>
+                            </ul>
+                            <div class="other-comments">
+                                <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                            </div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list checkbox--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03a" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid03a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03b" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03c" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03d" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03e" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03o" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid03o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03f" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03g" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03h" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="checkbox" name="grid03" id="grid03i" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid03i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list checkbox--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04a" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid04a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04b" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04c" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04d" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04e" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04o" tabindex="1" value="1">
+                                    <label class="rating__label" for="grid04o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04f" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04g" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04h" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="checkbox" name="grid04" id="grid04i" tabindex="1" value="0">
+                                    <label class="rating__label" for="grid04i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question full--width">
+                    <!-- text of question -->
+                    <div class="question__copy">
+                        <p><span class="question__no">12</span> During delivery, did someone from the dealership: - RADIO GRID</p>
+                    </div>
+                    <div class="grid-list">
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01a" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid01a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01b" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01c" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01d" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01e" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01o" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid01o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01f" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01g" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01h" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01i" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01i"></label>
+                                </li>
+                            </ul>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01aa" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid01aa"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01bb" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01bb"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01cc" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01cc"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01dd" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01dd"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01ee" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01ee"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01oo" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid01oo"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01ff" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01ff"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01gg" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01gg"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01hh" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01hh"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="radio" name="r-grid01" id="r-grid01ii" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid01ii"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02a" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid02a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02b" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02c" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02d" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02e" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02o" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid02o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02f" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02g" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02h" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="radio" name="r-grid02" id="r-grid02i" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid02i"></label>
+                                </li>
+                            </ul>
+                            <div class="other-comments">
+                                <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                            </div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03a" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid03a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03b" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03c" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03d" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03e" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03o" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid03o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03f" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03g" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03h" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="radio" name="r-grid03" id="r-grid03i" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid03i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name">Option 01</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04a" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid04a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 02</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04b" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04c" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">i have an oppintment at a later date</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04d" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 05</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04e" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 06</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04o" tabindex="1" value="1">
+                                    <label class="rating__label" for="r-grid04o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 07</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04f" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 08</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04g" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 09</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04h" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name">Option 10</div>
+                                    <input class="rating__field" type="radio" name="r-grid04" id="r-grid04i" tabindex="1" value="0">
+                                    <label class="rating__label" for="r-grid04i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="question">
+                    <div class="question__copy">
+                        <p><span class="question__no">13</span>(Toyota Retailer Name) was proactive in reminding me that my car needed service</p>
+                    </div>
+                    <div class="question__answer">
+                        <div class="date-field">
+                            <input class="datepicker" type="text" placeholder="" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row item">
+                <div class="question full--width">
+                    <!-- text of question -->
+                    <div class="question__copy">
+                        <p><span class="question__no">14</span> During delivery, did someone from the dealership: - RANKING GRID</p>
+                    </div>
+                    <div class="rankinggrid-list">
+                        <div class="grid-row options--row">
+                            <ul class="grid-rating-list">
+                                <li>
+                                    <div class="option-name">01</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">02</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">03</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">04</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">05</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">06</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">07</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">08</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">09</div>
+                                </li>
+                                <li>
+                                    <div class="option-name">10</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name-mobile">01</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01a" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-01a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">02</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01b" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">03</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01c" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">04</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01d" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">05</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01e" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">06</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01o" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-01o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">07</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01f" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">08</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01g" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">09</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01h" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">10</div>
+                                    <input class="rating__field" type="radio" name="rg-01" id="rg-01i" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-01i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name-mobile">01</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02a" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-02a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">02</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02b" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">03</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02c" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">04</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02d" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">05</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02e" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">06</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02o" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-02o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">07</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02f" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">08</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02g" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">09</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02h" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">10</div>
+                                    <input class="rating__field" type="radio" name="rg-02" id="rg-02i" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-02i"></label>
+                                </li>
+                            </ul>
+                            <div class="other-comments">
+                                <textarea class="textarea" placeholder="Other comments would go here"></textarea>
+                            </div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link) This question can grow to 2 lines as well</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name-mobile">01</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03a" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-03a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">02</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03b" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">03</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03c" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">04</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03d" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">05</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03e" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">06</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03o" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-03o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">07</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03f" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">08</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03g" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">09</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03h" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">10</div>
+                                    <input class="rating__field" type="radio" name="rg-03" id="rg-03i" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-03i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid__question"> Pair my compatible phone to Bluetooth (Hands Free Link)</div>
+                            <ul class="grid-rating-list radio--list">
+                                <li>
+                                    <div class="option-name-mobile">01</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04a" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-04a"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">02</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04b" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04b"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">03</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04c" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04c"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">04</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04d" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04d"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">05</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04e" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04e"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">06</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04o" tabindex="1" value="1">
+                                    <label class="rating__label" for="rg-04o"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">07</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04f" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04f"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">08</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04g" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04g"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">09</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04h" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04h"></label>
+                                </li>
+                                <li>
+                                    <div class="option-name-mobile">10</div>
+                                    <input class="rating__field" type="radio" name="rg-04" id="rg-04i" tabindex="1" value="0">
+                                    <label class="rating__label" for="rg-04i"></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="progress">
+            <span class="p_unit active"></span>
+            <span class="p_unit active"></span>
+            <span class="p_unit"></span>
+            <span class="p_unit"></span>
+            <span class="p_unit"></span>
+            <span class="p_unit"></span>
+        </div>
+
+    </main>
+
+    <footer>
+        <a class="btn btn--secondary btn--big btn--icon btn--disabled" href="">Previous <i class="material-icons">keyboard_backspace</i></a>
+        <a class="btn btn--big btn--icon-right" href="">Next <i class="material-icons icon--flip">keyboard_backspace</i></a>
+    </footer>
+
+
+</div>
+<!-- /.main -->
+
+
+</body>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!--<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>-->
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap-dropdown.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+    $('.selectpicker').selectpicker('boolean,true');
+
+
+    $(document).ready(function () {
+        var logID = 'ratingInfo',
+            log = $('<div class="'+logID+'"></div>');
+        $('.star-rating').append(log);
+        $('.star-rating-list [type*="radio"]').change(function () {
+            var me = $(this);
+            log.html(me.attr('value'));
+        });
+
+        $('.datepicker').datetimepicker({
+            format: 'MM-DD-YYYY',
+            icons: {
+                time: 'material-icons material-icons-time',
+                date: 'material-icons material-icons-calendar',
+                up: 'material-icons material-icons-chevron-up',
+                down: 'material-icons material-icons-chevron-down',
+                previous: 'material-icons material-icons-chevron-left',
+                next: 'material-icons material-icons-chevron-right',
+                today: 'material-icons material-icons-screenshot',
+                clear: 'material-icons material-icons-trash',
+                close: 'material-icons material-icons-remove'
+            }
+        });
+
+    });
+</script>
+
+</html>

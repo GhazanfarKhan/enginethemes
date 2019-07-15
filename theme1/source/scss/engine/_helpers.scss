@@ -1,0 +1,172 @@
+
+
+/////////////////////////////////////////////////////////////
+// helper classes start with _ to be recongnized in markup //
+// these are used for small tweaks when necessary          //
+// TRY NOT TO USE THEM MUCH                                //
+/////////////////////////////////////////////////////////////
+
+._txt-c {
+  text-align: center;
+}
+._txt-l {
+  text-align: left;
+}
+._txt-r {
+  text-align: right;
+}
+._txt-j {
+  text-align: justify;
+}
+// text hide
+.txt-invisible {
+  color: transparent;
+  &::selection {
+    color: transparent;
+    background: transparent;
+    text-shadow: none;
+  }
+  &::-moz-selection {
+    color: transparent;
+    background: transparent;
+    text-shadow: none;
+  }
+}
+
+
+._md-only {
+  @media only screen and (max-width: 992px) {
+    display: none !important;
+  }
+}
+
+// Break string 
+.break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+
+// Ellipse string 
+.ellipsis {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis; // Required for IE8 */
+  -o-text-overflow: ellipsis; // Required for Opera */
+  text-overflow: ellipsis;
+}
+
+
+/* `layout */
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+// // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+
+// .visuallyhidden.focusable:active,
+// .visuallyhidden.focusable:focus {
+//     clip: auto;
+//     height: auto;
+//     margin: 0;
+//     overflow: visible;
+//     position: static;
+//     width: auto;
+// }
+
+// Hide visually and from screenreaders, but maintain layout */
+
+.invisible {
+    visibility: hidden;
+}
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+}
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+// Disabled effect class
+.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+
+// Prevent callout
+
+._noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+// Upstream patch for normalize.css submitted: https://github.com/necolas/normalize.css/pull/379 - remove this fix once that is merged
+
+[role="button"] {
+  cursor: pointer;
+}
+
+.group {
+  @include clearfix();
+}
+
+._positioningContext {
+  position:relative;
+}

@@ -1,0 +1,164 @@
+// vertical align
+%verticalAlignContainer {
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+%verticlaAlignMiddle {
+    position: relative;
+    top: 50%;
+
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+%horizontalAlignMiddle {
+    position: relative;
+    left: 50%;
+
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);    
+}
+
+%placeInCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,  -50%);
+        -ms-transform: translate(-50%,  -50%);
+            transform: translate(-50%,  -50%);   
+
+}
+
+// clearfix
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        display: table;
+
+        content: ' ';
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// structure 
+%inline-block {
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+
+    vertical-align: middle;
+
+    *display: inline;
+}
+
+%roundedBorders {
+    @include border-radius(20px);
+}
+
+// 
+%box-shadow {
+    // -webkit-box-shadow:0 3px 5px rgba(1,1,1,.15);
+    //    -moz-box-shadow:0 3px 5px rgba(1,1,1,.15);
+    //         box-shadow:0 3px 5px rgba(1,1,1,.15);
+    // @include box-shadow(0, 3px, 5px, 0px, rgba(1,1,1,.15));
+    box-shadow: none;
+}
+
+// Visually hide an element
+%visuallyhidden {
+    position: absolute;
+
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+}
+
+// text replacement 
+%text-replacement {
+    font: 0/0 a;
+
+    color: transparent;
+    border: 0;
+    text-shadow: none;
+}
+
+// add ellipsis
+%text-truncate {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// typography 
+
+// lists
+%unstyledList {
+    list-style: none;
+}
+
+%inlineList {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include clearfix;
+    li {
+        display: inline-block;
+        float: left;
+        zoom: 1; /* Fix for IE7 */
+
+        vertical-align: top;
+
+        *display: inline; /* Fix for IE7 */
+    }
+}
+
+// lists
+%custom-list-counter {
+    list-style: none;
+
+    counter-reset: my-counter;
+    > li:before {
+        content: counter(my-counter, lower-alpha) ". ";
+        counter-increment: my-counter;
+    }
+}
+
+
+// z-index layering
+// layer1 being the bottom most layer with zindex 10
+// layer2 appears on layer1 with zindex 20 and so on
+
+%layer1 {
+    z-index: 10;
+}
+
+%layer2 {
+    z-index: 20;
+}
+
+// transitions
+
+%transitionFast {
+    @include transition(all, .3s);
+}
+
+%virtualTable {
+    display: table;
+    span {
+        display: table-cell;
+    }
+}

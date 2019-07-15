@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Toyota Survey</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="img/logo.png" class="" alt="">
+        </a>
+        <h3 class="slogan"> Toyota Experience Survey</h3>
+    </header>
+
+    <main class="main">
+        <div class="banner">
+            <img src="img/banner.jpg" alt="">
+        </div>
+        <div class="content">
+            <div class="other-pages">
+                <h2>DEAR CUSTOMER FIRSTNAME, CUSTOMER SURNAME
+                    <span>YOUR OPINION IS IMPORTANT</span> </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolore fugit praesentium! Dicta
+                    doloremque ducimus ea facilis ipsam labore, optio possimus, quaerat quo, reprehenderit sequi unde.
+                    Animi assumenda magni quia? Doloribus eligendi exercitationem explicabo maiores modi natus quis voluptatem? Blanditiis cum
+                    dolorem in quaerat similique sint veniam. Aperiam dolorem laboriosam, minima mollitia nemo, quae
+                    repellendus reprehenderit sed sequi suscipit tempora.</p>
+                <p>Assumenda libero quod unde? Accusantium fugit in ipsum maxime non rerum? Aut consequatur dicta
+                    libero! </p>
+                <div class="select-language">
+                    <label class="language__label">
+                        Select Language
+                    </label>
+                    <div class="language__select">
+                        <select class="selectpicker" data-width="100%" data-style="btn-select" data-size="5">
+                            <option>Language 01</option>
+                            <option>Language 02</option>
+                            <option>Language 03</option>
+                            <option>Language 04</option>
+                            <option>Language 05</option>
+                            <option>Language 06</option>
+                            <option>Language 07</option>
+                            <option>Language 08</option>
+                            <option>Language 09</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <a class="btn btn--secondary btn--big" href="">Start Survey </a>
+                <a class="btn btn--big" href="">Resume Survey </a>
+            </footer>
+        </div>
+
+    </main>
+
+
+</div>
+<!-- /.main -->
+
+
+</body>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!--<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>-->
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap-dropdown.js"></script>
+<script type="text/javascript">
+    $('.selectpicker').selectpicker('boolean,true');
+
+
+    $(document).ready(function () {
+        var logID = 'ratingInfo',
+            log = $('<div class="'+logID+'"></div>');
+        $('.star-rating').append(log);
+        $('.star-rating-list [type*="radio"]').change(function () {
+            var me = $(this);
+            log.html(me.attr('value'));
+        });
+
+    });
+</script>
+</html>
